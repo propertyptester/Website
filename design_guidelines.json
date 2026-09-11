@@ -1,0 +1,114 @@
+{
+  "project_name": "Property Perfect - Florida Property Care Partner",
+  "brand_positioning": "One call, one crew, property handled.",
+  "theme": {
+    "mode": "light",
+    "atmosphere": "Bright Florida Sunshine & Lush Coastal Greenery",
+    "colors": {
+      "teal_primary": "#0D9488",
+      "teal_dark": "#0F766E",
+      "teal_light": "#14B8A6",
+      "deep_green": "#064E3B",
+      "deep_green_surface": "#022C22",
+      "coral_accent": "#FF6B57",
+      "coral_hover": "#E05340",
+      "mint_highlight": "#34D399",
+      "mint_soft": "#D1FAE5",
+      "warm_white_bg": "#FAF9F5",
+      "warm_card_bg": "#FFFFFF",
+      "slate_text_heading": "#0F172A",
+      "slate_text_body": "#334155",
+      "subtle_border": "#E2E8F0"
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "Plus Jakarta Sans, sans-serif",
+    "accent_font": "Outfit, sans-serif",
+    "h1_size": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight",
+    "h2_size": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+    "h3_size": "text-xl sm:text-2xl font-semibold",
+    "body_size": "text-base sm:text-lg text-slate-6xl leading-relaxed"
+  },
+  "hero_image_url": "https://images.unsplash.com/photo-1667869373278-43244e0ac7ed?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY6NzR8MHwxfHNlYXJjaHwxfHxmbG9yaWRhJTIwdHJvcGljYWwlMjBwYWxtJTIwdHJlZXMlMjBwcm9wZXJ0eSUyMGxhbmRzY2FwaW5nJTIwY2xlYW4lMjBjb21tZXJjaWFsJTIwcmVzaWRlbnRpYWx8ZW58MHx8fHwxNzg5MTUyNTI5fDA&ixlib=rb-4.1.0&q=85",
+  "section_image_urls": {
+    "tree_services": "https://images.unsplash.com/photo-1657730391002-bf55ff069a80?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHx0cmVlJTIwdHJpbW1pbmclMjBzZXJ2aWNlJTIwcHJvZmVzc2lvbmFsJTIwYXJib3Jpc3QlMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzg5MTUyNTI5fDA&ixlib=rb-4.1.0&q=85",
+    "hoa_commercial": "https://images.unsplash.com/photo-1644864544377-da82b8cf3703?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxjb21tZXJjaWFsJTIwcHJvcGVydHklMjBtYWludGVuYW5jZSUyMGNvbmNyZXRlJTIwcHJlc3N1cmUlMjB3YXNoaW5nJTIwZmxvcmlkYXxlbnwwfHx8fDE3ODkxNTI1Mzl8MA&ixlib=rb-4.1.0&q=85",
+    "crew_truck": "https://images.unsplash.com/photo-1586207943161-821db30f42f1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxmbG9yaWRhJTIwcHJvcGVydHklMjBtYW5hZ2VtZW50JTIwY3JldyUyMHdvcmslMjB0cnVjayUyMGFyYm9yaXN0fGVufDB8fHx8MTc4OTE1MjUzOXww&ixlib=rb-4.1.0&q=85",
+    "resort_pool": "https://images.unsplash.com/photo-1583468381700-d035630deed6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxmbG9yaWRhJTIwbHV4dXJ5JTIwcmVzb3J0JTIwcG9vbCUyMGNvbW11bml0eSUyMHBhbG0lMjB0cmVlcyUyMHN1bnNoaW5lfGVufDB8fHx8MTc4OTE1MjU0M3ww&ixlib=rb-4.1.0&q=85",
+    "palm_driveway": "https://images.unsplash.com/photo-1734381077421-01a348085a4c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY6NzR8MHwxfHNlYXJjaHwyfHxmbG9yaWRhJTIwdHJvcGljYWwlMjBwYWxtJTIwdHJlZXMlMjBwcm9wZXJ0eSUyMGxhbmRzY2FwaW5nJTIwY2xlYW4lMjBjb21tZXJjaWFsJTIwcmVzaWRlbnRpYWx8ZW58MHx8fHwxNzg5MTUyNTI5fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/",
+      "sections": [
+        "Header Navigation with clear phone CTA & Request Quote button",
+        "Hero Section with tropical background, brand tagline ('One call, one crew, property handled.'), fast quote modal trigger & work-order submission bar",
+        "Key Service Categories Overview (Tree Removal & Trimming, HOA Work Orders, Concrete, Property Maintenance & Repairs, Cleanup & Landscaping, General Property Improvements)",
+        "Customer Segment Focus (Property Managers, HOAs, Commercial Property Owners, Homeowners)",
+        "Trust & Reliability Metrics ('99.4% Work Order On-Time Rate', 'Dedicated Account Managers', 'Full Florida Licensing & $2M Insured')",
+        "Florida Service Area Coverage Map & Regional Highlights (Orlando, Tampa, Miami, Jacksonville, Fort Lauderdale, Sarasota, Naples, Palm Beach)",
+        "Testimonial Slider / Highlight Cards",
+        "Instant Work-Order / Quote Banner CTA"
+      ]
+    },
+    {
+      "name": "Services",
+      "path": "/services",
+      "sections": [
+        "Detailed Service Catalog with filtering by Property Type",
+        "Data-driven structure allowing dynamic expansion of new services",
+        "Deep dives into Tree Services, HOA Work Orders, Concrete Pavers & Slab Work, Grounds Cleanup, Building Maintenance",
+        "Emergency Storm Response & Hurricane Prep protocols",
+        "Interactive Work Order Calculator / Estimate Estimator"
+      ]
+    },
+    {
+      "name": "About",
+      "path": "/about",
+      "sections": [
+        "The Property Perfect Story & 'One Crew' Philosophy",
+        "Florida Headquarters & Regional Service Hubs",
+        "Safety, Licensing, Insurance & Compliance Guarantee",
+        "Meet the Leadership & Field Supervisors"
+      ]
+    },
+    {
+      "name": "Gallery / Projects",
+      "path": "/gallery",
+      "sections": [
+        "Interactive Before/After Project Showcase with slider toggles",
+        "Category Filters (Tree Removal, Concrete, HOA Common Area, Commercial Prep, Landscaping)",
+        "Project Case Studies with completion metrics and client feedback"
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "path": "/testimonials",
+      "sections": [
+        "Filterable Reviews (Property Managers, HOA Board Members, Commercial Owners, Homeowners)",
+        "Star Ratings, Verified Badges, and Quote Statements",
+        "Video / Spotlight Client Stories"
+      ]
+    },
+    {
+      "name": "Contact / Request a Quote",
+      "path": "/contact",
+      "sections": [
+        "Comprehensive Quote & Work Order Submission Form with file attachment, urgency level, property type, and service selector",
+        "Direct Contact Information, Emergency Line, Dispatch Hours",
+        "Service Area Zip Code Checker"
+      ]
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Use raw JavaScript (.js / .jsx) files.",
+    "Import Lucide-react icons for clean service graphics.",
+    "Ensure every interactive button, input, tab, card, and link has a data-testid attribute for reliable automated testing.",
+    "Follow the generous spacing system (p-6, p-8, p-12, py-16, py-24).",
+    "Never rely on default transparent dropdowns or unstyled headers.",
+    "Make the brand tagline 'One call, one crew, property handled.' prominently visible.",
+    "Ensure the quote and work-order submission flows are interactive and user-friendly with Sonner notifications on submission."
+  ]
+}
