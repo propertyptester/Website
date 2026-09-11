@@ -21,7 +21,7 @@ export function Logo({ light = false }) {
         <span className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-coral" />
       </span>
       <span className="font-display text-xl font-bold leading-none">
-        <span className={light ? "text-mint" : "text-lagoon"}>Property</span>{" "}
+        <span className={light ? "text-mint" : "text-pine"}>Property</span>{" "}
         <span className="font-script text-2xl font-semibold text-coral">Perfect</span>
       </span>
     </Link>
