@@ -13,7 +13,7 @@ export default function Footer() {
             <Logo light />
             <p className="mt-5 max-w-xs text-sm leading-relaxed">{COMPANY.promise}</p>
             <p className="mt-4 font-script text-2xl text-mint">
-              Same properties. A brighter tomorrow ♡
+              Same properties. A brighter tomorrow...
             </p>
             <div className="mt-6 flex gap-3">
               {[

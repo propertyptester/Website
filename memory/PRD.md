@@ -32,6 +32,11 @@ Build Property Perfect, a Florida property services company serving property man
 - Testimonials beyond the 3 in the reference mock, gallery projects, city list, dispatch hours
 - Photography is representative stock imagery
 
+## Implemented (2026-09-11, round 3)
+- Status notifications: moving a request to Scheduled or Completed emails the customer automatically (fixed template, no duplicates on re-save, non-blocking)
+- Heart glyph removed from all script annotations (quote band, footer, home story/hero/service-area, About) per user preference
+- Real contact details site-wide: (402) 606-7011, admin@propertyperfect.net
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider

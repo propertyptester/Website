@@ -198,7 +198,11 @@ export default function Admin() {
     setRequests((rs) => rs.map((r) => (r.id === id ? { ...r, status } : r)));
     try {
       await api.patch(`/quote-requests/${id}/status`, { status });
-      toast.success(`Marked ${status}`);
+      toast.success(
+        status === "scheduled" || status === "completed"
+          ? `Marked ${status} — customer notified by email`
+          : `Marked ${status}`
+      );
     } catch (err) {
       toast.error(formatApiErrorDetail(err.response?.data?.detail));
       load();

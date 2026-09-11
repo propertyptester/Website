@@ -368,17 +368,54 @@ async def list_quote_requests(user: dict = Depends(get_current_user)):
     return [QuoteRequest.from_mongo(d).model_dump() for d in docs]
 
 
+def _status_email_html(name: str, line: str, service: str, ref: str, label: str) -> str:
+    return (
+        f'<table role="presentation" width="100%" style="background:#F3EBDC;padding:24px">'
+        f'<tr><td><table role="presentation" width="100%" style="max-width:560px;background:#FBF6ED;border-radius:12px">'
+        f'<tr><td style="padding:24px">'
+        f'<p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#0C5B47;font-family:Arial,sans-serif">{escape(EMAIL_FROM_NAME)}</p>'
+        f'<p style="margin:0 0 18px;font-size:13px;color:#48645B;font-family:Arial,sans-serif">Update on your {escape(label)} ({escape(ref)})</p>'
+        f'<p style="margin:0 0 12px;font-size:14px;color:#0E241F;font-family:Arial,sans-serif">Hi {escape(name)},</p>'
+        f'<p style="margin:0 0 12px;font-size:14px;color:#0E241F;font-family:Arial,sans-serif">Your {escape(label)} for <strong>{escape(service)}</strong> {line}</p>'
+        f'<p style="margin:0 0 18px;font-size:14px;color:#0E241F;font-family:Arial,sans-serif">Reference: <strong>{escape(ref)}</strong></p>'
+        f'<p style="margin:0;font-size:12px;color:#888;font-family:Arial,sans-serif">Sent by {escape(EMAIL_FROM_NAME)}. We never ask for your password or card details by email.</p>'
+        f'</td></tr></table></td></tr></table>'
+    )
+
+
 @api_router.patch("/quote-requests/{req_id}/status")
 async def update_quote_status(req_id: str, body: StatusBody, user: dict = Depends(get_current_user)):
     if not ObjectId.is_valid(req_id):
         raise HTTPException(status_code=400, detail="Invalid request id")
     if body.status not in VALID_STATUSES:
         raise HTTPException(status_code=400, detail="Invalid status")
+    existing = await db.quote_requests.find_one({"_id": req_id})
+    if not existing:
+        raise HTTPException(status_code=404, detail="Request not found")
+    previous = existing.get("status", "new")
     result = await db.quote_requests.update_one(
         {"_id": req_id}, {"$set": {"status": body.status}}
     )
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Request not found")
+    if body.status in ("scheduled", "completed") and previous != body.status:
+        req = QuoteRequest.from_mongo(existing)
+        label = "work order" if req.request_type == "work-order" else "quote request"
+        ref = f"PP-{req.id[-6:].upper()}"
+        if body.status == "scheduled":
+            subject = f"Your Property Perfect {label} is scheduled"
+            line = ("has been <strong>scheduled</strong>. Our crew has you on the calendar, "
+                    "and we will confirm arrival details as the date gets close.")
+        else:
+            subject = f"Your Property Perfect {label} is complete"
+            line = ("has been <strong>completed</strong>. Thank you for trusting Property Perfect "
+                    "with your property — if anything else needs handling, one call does it.")
+        try:
+            email_id = await send_email(to=req.email, subject=subject,
+                                        html=_status_email_html(req.name, line, req.service, ref, label))
+            logging.info(f"Customer status email sent ({body.status}): {email_id}")
+        except Exception as e:
+            logging.error(f"Customer status email failed: {str(e)}")
     return {"success": True, "id": req_id, "status": body.status}
 
 

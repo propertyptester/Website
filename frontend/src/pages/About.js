@@ -58,7 +58,7 @@ export default function About() {
                 maintain, and renew properties for the long term. We&apos;re not just maintaining
                 properties — we&apos;re helping build a brighter Florida, one property at a time.
               </p>
-              <p className="mt-6 font-script text-3xl text-coral">Same properties. A brighter tomorrow ♡</p>
+              <p className="mt-6 font-script text-3xl text-coral">Same properties. A brighter tomorrow...</p>
             </Reveal>
           </div>
           <Reveal delay={0.1}>

@@ -168,7 +168,7 @@ function Hero() {
               loading="eager"
             />
             <p className="absolute -left-10 top-10 hidden -rotate-6 font-script text-2xl text-coral lg:block">
-              A brighter way to maintain properties ♡
+              A brighter way to maintain properties
             </p>
           </motion.div>
           <RotatingBadge />
@@ -307,7 +307,7 @@ function StorySplit() {
               loading="lazy"
             />
             <p className="absolute left-6 top-6 -rotate-3 rounded-2xl bg-deep/70 px-5 py-3 font-script text-2xl text-cream backdrop-blur-sm">
-              Same properties. A brighter tomorrow ♡
+              Same properties. A brighter tomorrow...
             </p>
           </div>
         </Reveal>
@@ -432,7 +432,7 @@ function ServiceArea() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
         <div>
           <Reveal>
-            <p className="font-script text-3xl text-coral">from the Panhandle to the Keys ♡</p>
+            <p className="font-script text-3xl text-coral">from the Panhandle to the Keys</p>
             <h2 className="mt-1 font-display text-3xl font-extrabold text-ink sm:text-4xl lg:text-5xl">
               Proudly serving all of Florida
             </h2>
