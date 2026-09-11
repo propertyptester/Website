@@ -11,7 +11,7 @@ export default function QuoteBand() {
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
             <Reveal>
-              <p className="font-script text-3xl text-mint">A brighter tomorrow ♡</p>
+              <p className="font-script text-3xl text-mint">A brighter tomorrow...</p>
               <h2 className="mt-2 font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
                 Let&apos;s make your property perfect.
               </h2>

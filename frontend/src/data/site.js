@@ -7,9 +7,9 @@ export const COMPANY = {
   name: "Property Perfect",
   tagline: "Build. Maintain. Renew.",
   promise: "One call, one crew, property handled.",
-  phone: "(407) 555-3600",
-  phoneHref: "tel:+14075553600",
-  email: "hello@propertyperfect.com",
+  phone: "(402) 606-7011",
+  phoneHref: "tel:+14026067011",
+  email: "admin@propertyperfect.net",
   area: "Serving all of Florida",
   hours: "Mon–Sat · 7am–6pm",
 };

@@ -27,7 +27,7 @@ class ErrorBoundary extends Component {
         <div className="flex min-h-screen items-center justify-center bg-cream p-8 text-center font-body text-ink">
           <div>
             <p className="font-display text-2xl font-extrabold">Something went sideways.</p>
-            <p className="mt-2 text-moss">Please refresh the page — or call us at (407) 555-3600.</p>
+            <p className="mt-2 text-moss">Please refresh the page — or call us at (402) 606-7011.</p>
           </div>
         </div>
       );
