@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -93,6 +94,7 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

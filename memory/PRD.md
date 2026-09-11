@@ -33,7 +33,12 @@ Build Property Perfect, a Florida property services company serving property man
 - Photography is representative stock imagery
 
 ## Backlog
-- P1: Admin panel to review/manage submitted quote requests; email notification on submission (Resend)
-- P1: Real business details, reviews with real names, project photos
+- P1: Real business details (phone, address), reviews with real names, project photos
+- P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
+- P2: Storm/emergency line banner during hurricane season
+
+## Implemented (2026-09-11, round 2)
+- Admin Quote Inbox at /admin: JWT login (bcrypt, httpOnly cookies, brute-force lockout), all submissions with quote/work-order badges, persistent status tracking (new/contacted/scheduled/completed via PATCH /api/quote-requests/{id}/status)
+- Email alerts: every submission emails the owner (admin@propertyperfect.net) through the managed Resend proxy, with guardrail gate + server-side template
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
 - P2: Storm/emergency line banner during hurricane season
