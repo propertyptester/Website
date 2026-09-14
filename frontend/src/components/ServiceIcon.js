@@ -40,7 +40,7 @@ const ICONS = {
 
 const CHIPS = {
   coral: "bg-mint text-pine",
-  teal: "bg-[#DCEFF7] text-lagoon",
+  teal: "bg-mint text-pine",
   mint: "bg-mint text-pine",
 };
 
