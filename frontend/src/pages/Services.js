@@ -74,7 +74,7 @@ export default function Services() {
               <div className="relative">
                 <div
                   className={`absolute -inset-3 rounded-[2.5rem] ${
-                    i % 2 === 0 ? "-rotate-2 bg-mint" : "rotate-2 bg-[#DCF2F6]"
+                    i % 2 === 0 ? "-rotate-2 bg-mint" : "rotate-2 bg-[#DCF3EE]"
                   }`}
                   aria-hidden="true"
                 />

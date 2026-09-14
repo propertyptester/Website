@@ -51,7 +51,7 @@ function Hero() {
   return (
     <section ref={ref} className="relative overflow-hidden bg-cream pt-28 md:pt-36" data-testid="hero">
       <div className="pointer-events-none absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full bg-mint/50 blur-3xl" />
-      <div className="pointer-events-none absolute -left-52 top-72 h-[420px] w-[420px] rounded-full bg-[#DCF2F6]/60 blur-3xl" />
+      <div className="pointer-events-none absolute -left-52 top-72 h-[420px] w-[420px] rounded-full bg-[#DCF3EE]/60 blur-3xl" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 md:px-8 lg:grid-cols-12 lg:gap-8 lg:pb-28">
         <div className="lg:col-span-6">
           <MaskLine delay={0.05}>
@@ -446,7 +446,7 @@ function ServiceArea() {
         </div>
         <Reveal delay={0.1}>
           <div className="relative">
-            <div className="absolute -inset-4 rotate-2 rounded-[2.5rem] bg-[#DCF2F6]" aria-hidden="true" />
+            <div className="absolute -inset-4 rotate-2 rounded-[2.5rem] bg-[#DCF3EE]" aria-hidden="true" />
             <img
               src={IMG.palmDrive}
               alt="Palm tree lined Florida community driveway"

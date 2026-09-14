@@ -135,7 +135,7 @@ export default function About() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
           <Reveal>
             <div className="relative">
-              <div className="absolute -inset-3 -rotate-2 rounded-[2.5rem] bg-[#DCF2F6]" aria-hidden="true" />
+              <div className="absolute -inset-3 -rotate-2 rounded-[2.5rem] bg-[#DCF3EE]" aria-hidden="true" />
               <img
                 src={IMG.crew}
                 alt="Property Perfect crew member on a Florida work site"

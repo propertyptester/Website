@@ -44,6 +44,9 @@ Build Property Perfect, a Florida property services company serving property man
 - Dedicated /request page from hero CTA: name/company, property address, photo upload (client-side downscaled, stored server-side, link included in owner email), problem description, urgency — emails admin@propertyperfect.net on send
 - "360" branding confirmed as app-only; site stays "Property Perfect"
 
+## Implemented (2026-09-11, round 6 — logo theme)
+- Palette aligned to the logo: headings/bands now the logo's sea-green teal (pine #127B68, deep #0A5F52, lagoon #189887), coral accents kept, blue tints replaced with teal tints site-wide
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
