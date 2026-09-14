@@ -50,6 +50,9 @@ Build Property Perfect, a Florida property services company serving property man
 ## Implemented (2026-09-14, round 7 — real logo)
 - Official logo (transparent PNG, cleaned from uploaded art) now live in navbar and footer; favicon recolored to match; palette aligned to true logo colors: blue-teal #256E80 / #1B4A5C bands, sky-blue accent #4FA8C6, logo coral #F4503A
 
+## Implemented (2026-09-14, round 8 — logo variants)
+- Navbar shows the logo lockup WITHOUT the Build•Maintain•Renew tagline (tagline cropped from a separate variant); footer keeps the full lockup with tagline on its light card
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider

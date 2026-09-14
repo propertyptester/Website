@@ -19,7 +19,7 @@ export function Logo({ light = false }) {
       {light ? (
         <span className="inline-flex items-center rounded-2xl bg-cream p-2 shadow-sm transition-transform duration-300 group-hover:-rotate-1">
           <img
-            src="/logo.png"
+            src="/logo-full.png"
             alt="Property Perfect — Build. Maintain. Renew."
             data-testid="logo-image"
             className="h-12 w-auto"
