@@ -73,7 +73,7 @@ function Hero() {
                 >
                   <path
                     d="M2 9 C 60 3, 240 3, 298 8"
-                    stroke="#FF6B5C"
+                    stroke="#F4503A"
                     strokeWidth="5"
                     fill="none"
                     strokeLinecap="round"
@@ -88,8 +88,9 @@ function Hero() {
             transition={{ delay: 0.6, duration: 0.7, ease: EASE }}
             className="mt-6 max-w-lg text-lg leading-relaxed text-moss"
           >
-            Tree work, HOA work orders, concrete, maintenance and landscaping — handled by one
-            dependable Florida crew. <span className="font-bold text-ink">Build. Maintain. Renew.</span>
+            Tree work, concrete, repairs, landscaping and everything between — one licensed,
+            insured crew handling your whole property, from the first quote to a photo-proof
+            close-out. <span className="font-bold text-ink">Build. Maintain. Renew.</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -100,17 +101,10 @@ function Hero() {
             <Link
               to="/contact"
               data-testid="hero-quote-cta"
-              className="group inline-flex items-center gap-2 rounded-full bg-coral px-8 py-4 text-base font-extrabold text-white shadow-[0_14px_30px_-10px_rgba(255,107,92,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral-dark"
+              className="group inline-flex items-center gap-2 rounded-full bg-coral px-8 py-4 text-base font-extrabold text-white shadow-[0_14px_30px_-10px_rgba(244,80,58,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral-dark"
             >
               Get a Free Quote
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/request"
-              data-testid="hero-work-order-cta"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-pine/20 px-8 py-4 text-base font-bold text-pine transition-all duration-300 hover:border-pine hover:bg-pine hover:text-cream"
-            >
-              Send a Work Order
             </Link>
           </motion.div>
           <motion.div
@@ -147,12 +141,9 @@ function Hero() {
               src={IMG.hero}
               alt="Florida home with manicured tropical landscaping and palm trees"
               data-testid="hero-image"
-              className="relative aspect-[3/4] w-full rounded-t-full rounded-b-[2rem] object-cover shadow-[0_40px_80px_-40px_rgba(5,55,44,0.5)]"
+              className="relative aspect-[3/4] w-full rounded-t-full rounded-b-[2rem] object-cover shadow-[0_40px_80px_-40px_rgba(27,74,92,0.5)]"
               loading="eager"
             />
-            <p className="absolute -left-10 top-10 hidden -rotate-6 font-script text-2xl text-coral lg:block">
-              A brighter way to maintain properties
-            </p>
           </motion.div>
         </div>
       </div>
@@ -177,7 +168,7 @@ function ServicesOverview() {
               <Link
                 to={`/services#${s.slug}`}
                 data-testid={`service-card-${s.slug}`}
-                className="group flex h-full flex-col items-center rounded-3xl border border-ink/5 bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(5,55,44,0.35)]"
+                className="group flex h-full flex-col items-center rounded-3xl border border-ink/5 bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(27,74,92,0.35)]"
               >
                 <ServiceIcon name={s.icon} chip={s.chip} size="lg" />
                 <h3 className="mt-5 font-display text-xl font-extrabold text-ink">{s.name}</h3>
@@ -214,7 +205,7 @@ function CustomerTypes() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="font-script text-3xl text-coral">who we serve</p>
           <h2 className="mt-1 font-display text-3xl font-extrabold text-ink sm:text-4xl lg:text-5xl">
-            Built for Florida&apos;s property people
+            360° maintenance for every kind of property
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -222,13 +213,13 @@ function CustomerTypes() {
             <Reveal key={c.slug} delay={0.08 * i} className="h-full">
               <div
                 data-testid={`customer-card-${c.slug}`}
-                className="flex h-full flex-col rounded-3xl border border-ink/5 bg-cream p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(5,55,44,0.3)]"
+                className="flex h-full flex-col rounded-3xl border border-ink/5 bg-cream p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(27,74,92,0.3)]"
               >
                 <ServiceIcon name={c.icon} chip={c.chip} />
                 <h3 className="mt-5 font-display text-lg font-extrabold leading-snug text-ink">{c.name}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-moss">{c.copy}</p>
                 <Link
-                  to="/contact?type=work-order"
+                  to="/request"
                   data-testid={`customer-cta-${c.slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-extrabold text-coral transition-all duration-300 hover:gap-2.5"
                 >
@@ -285,12 +276,9 @@ function StorySplit() {
               src={IMG.sunset}
               alt="Florida palm trees silhouetted against a sunset skyline"
               data-testid="home-story-image"
-              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[0_32px_64px_-32px_rgba(5,55,44,0.5)]"
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[0_32px_64px_-32px_rgba(27,74,92,0.5)]"
               loading="lazy"
             />
-            <p className="absolute left-6 top-6 -rotate-3 rounded-2xl bg-deep/70 px-5 py-3 font-script text-2xl text-cream backdrop-blur-sm">
-              Same properties. A brighter tomorrow...
-            </p>
           </div>
         </Reveal>
         <div>
@@ -366,7 +354,7 @@ function TestimonialsPreview() {
             <Reveal key={t.name} delay={0.08 * i} className="h-full">
               <figure
                 data-testid={`home-testimonial-card-${i + 1}`}
-                className="flex h-full flex-col rounded-3xl border border-ink/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(5,55,44,0.3)]"
+                className="flex h-full flex-col rounded-3xl border border-ink/5 bg-white p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-24px_rgba(27,74,92,0.3)]"
               >
                 <div className="flex gap-1 text-coral" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, s) => (
@@ -451,7 +439,7 @@ function ServiceArea() {
               src={IMG.palmDrive}
               alt="Palm tree lined Florida community driveway"
               data-testid="service-area-image"
-              className="relative aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-[0_32px_64px_-32px_rgba(5,55,44,0.5)]"
+              className="relative aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-[0_32px_64px_-32px_rgba(27,74,92,0.5)]"
               loading="lazy"
             />
           </div>
