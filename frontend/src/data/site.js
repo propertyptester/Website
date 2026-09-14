@@ -15,7 +15,7 @@ export const COMPANY = {
 };
 
 export const IMG = {
-  hero: U("photo-1667869373278-43244e0ac7ed", 1600),
+  hero: U("photo-1688064776733-c163870305f2", 1600),
   palmDrive: U("photo-1734381077421-01a348085a4c"),
   sunset: U("photo-1605723517503-3cadb5818a0c"),
   tree1: U("photo-1626828476637-5bd713ef9f22"),

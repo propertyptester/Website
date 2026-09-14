@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Leaf } from "lucide-react";
+import { Menu, X, ArrowRight, Home } from "lucide-react";
 import { EASE } from "./anim";
 
 const LINKS = [
@@ -17,7 +17,7 @@ export function Logo({ light = false }) {
   return (
     <Link to="/" data-testid="logo-link" className="group flex items-center gap-2">
       <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-pine text-cream transition-transform duration-300 group-hover:-rotate-6">
-        <Leaf className="h-5 w-5" />
+        <Home className="h-5 w-5" />
         <span className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-coral" />
       </span>
       <span className="font-display text-xl font-bold leading-none">

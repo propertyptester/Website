@@ -43,23 +43,6 @@ const MANIFESTO = [
   },
 ];
 
-function RotatingBadge() {
-  return (
-    <div className="absolute -bottom-8 -left-8 hidden h-36 w-36 items-center justify-center md:flex">
-      <svg viewBox="0 0 100 100" className="h-full w-full animate-spin-slow drop-shadow-lg">
-        <circle cx="50" cy="50" r="50" className="fill-coral" />
-        <defs>
-          <path id="badge-circle" d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0" />
-        </defs>
-        <text className="fill-cream" style={{ fontSize: "9.5px", letterSpacing: "2.6px", fontWeight: 700 }}>
-          <textPath href="#badge-circle">BUILD • MAINTAIN • RENEW • ONE CREW •</textPath>
-        </text>
-      </svg>
-      <Leaf className="absolute h-8 w-8 text-cream" />
-    </div>
-  );
-}
-
 function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -171,7 +154,6 @@ function Hero() {
               A brighter way to maintain properties
             </p>
           </motion.div>
-          <RotatingBadge />
         </div>
       </div>
     </section>
@@ -283,7 +265,7 @@ function Manifesto() {
               >
                 <span className="font-display text-5xl font-extrabold text-coral/90 md:text-6xl">{m.num}</span>
                 <h3 className="font-display text-2xl font-extrabold md:text-3xl">{m.title}</h3>
-                <p className="max-w-xl leading-relaxed text-cream/70">{m.copy}</p>
+                <p className="max-w-xl text-lg leading-relaxed text-cream/80 md:text-xl">{m.copy}</p>
               </div>
             </Reveal>
           ))}
