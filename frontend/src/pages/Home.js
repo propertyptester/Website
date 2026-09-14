@@ -90,7 +90,8 @@ function Hero() {
           >
             Tree work, concrete, repairs, landscaping and everything between — one licensed,
             insured crew handling your whole property, from the first quote to a photo-proof
-            close-out. <span className="font-bold text-ink">Build. Maintain. Renew.</span>
+            close-out.
+            <span className="mt-3 block font-bold text-ink">Build. Maintain. Renew.</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,7 +116,7 @@ function Hero() {
           >
             {[
               [ShieldCheck, "Reliable Service"],
-              [Leaf, "Florida Focused"],
+              [Leaf, "360° Maintenance"],
               [Camera, "Cleaner, Healthier Properties"],
             ].map(([Icon, label]) => (
               <span key={label} className="flex items-center gap-2 text-sm font-bold text-ink">

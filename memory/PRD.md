@@ -56,6 +56,9 @@ Build Property Perfect, a Florida property services company serving property man
 ## Implemented (2026-09-14, round 9 — home copy edits)
 - Hero: floating script annotation deleted, sub-copy rewritten, "Send a Work Order" button removed (single Get a Free Quote CTA), story image overlay deleted, customer heading now "360° maintenance for every kind of property", customer CTAs point to /request
 
+## Implemented (2026-09-14, round 10)
+- Hero: "Build. Maintain. Renew." on its own line; "Florida Focused" trust chip replaced with "360° Maintenance" (broader-than-Florida positioning)
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
