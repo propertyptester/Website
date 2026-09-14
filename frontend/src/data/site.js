@@ -242,6 +242,21 @@ export const PROJECTS = [
   { title: "Full-property spring cleanup", category: "Landscaping", image: IMG.land2 },
 ];
 
+export const BEFORE_AFTER = [
+  {
+    slug: "garden-bed-refresh",
+    title: "Garden bed refresh",
+    before: IMG.garden1,
+    after: IMG.garden2,
+  },
+  {
+    slug: "palm-driveway-groom",
+    title: "Palm driveway groom",
+    before: IMG.community,
+    after: IMG.palmDrive,
+  },
+];
+
 export const CITIES = [
   "Orlando",
   "Tampa",

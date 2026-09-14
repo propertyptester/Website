@@ -2,8 +2,9 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PageMeta from "../components/PageMeta";
 import QuoteBand from "../components/QuoteBand";
+import BeforeAfter from "../components/BeforeAfter";
 import { Reveal, EASE } from "../components/anim";
-import { PROJECTS } from "../data/site";
+import { PROJECTS, BEFORE_AFTER } from "../data/site";
 
 const CATEGORIES = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
 
@@ -31,8 +32,30 @@ export default function Gallery() {
               quoted, scheduled and closed out the same dependable way.
             </p>
           </Reveal>
+        </div>
+      </section>
 
-          <Reveal delay={0.15} className="mt-8 flex flex-wrap gap-2.5">
+      <section className="pb-16 md:pb-20" data-testid="before-after-section">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="font-script text-3xl text-coral">drag the handle</p>
+            <h2 className="mt-1 font-display text-3xl font-extrabold text-ink sm:text-4xl">
+              Watch the transformation
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {BEFORE_AFTER.map((p, i) => (
+              <Reveal key={p.slug} delay={0.08 * i}>
+                <BeforeAfter before={p.before} after={p.after} title={p.title} slug={p.slug} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 md:pb-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <Reveal className="flex flex-wrap gap-2.5">
             {CATEGORIES.map((c) => (
               <button
                 key={c}
@@ -48,12 +71,8 @@ export default function Gallery() {
               </button>
             ))}
           </Reveal>
-        </div>
-      </section>
 
-      <section className="pb-20 md:pb-24">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div layout className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {filtered.map((p, i) => (
                 <motion.figure

@@ -106,7 +106,7 @@ function Hero() {
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
-              to="/contact?type=work-order"
+              to="/request"
               data-testid="hero-work-order-cta"
               className="inline-flex items-center gap-2 rounded-full border-2 border-pine/20 px-8 py-4 text-base font-bold text-pine transition-all duration-300 hover:border-pine hover:bg-pine hover:text-cream"
             >

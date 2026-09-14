@@ -1,4 +1,5 @@
-from fastapi import FastAPI, APIRouter, Request, Response, Depends, HTTPException
+from fastapi import FastAPI, APIRouter, Request, Response, Depends, HTTPException, UploadFile, File
+from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -7,6 +8,7 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr, BeforeValidator
 from typing import Annotated
 import os
 import re
+import uuid
 import ipaddress
 import logging
 import bcrypt
@@ -37,7 +39,19 @@ logger = logging.getLogger(__name__)
 JWT_ALGORITHM = "HS256"
 JWT_SECRET = os.environ['JWT_SECRET']
 OWNER_EMAIL = os.environ['OWNER_EMAIL']
+SITE_URL = os.environ['SITE_URL']
 VALID_STATUSES = {"new", "contacted", "scheduled", "completed"}
+
+UPLOAD_DIR = Path("/app/backend/uploads")
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+_IMG_EXT = {
+    "image/jpeg": ".jpg",
+    "image/png": ".png",
+    "image/webp": ".webp",
+    "image/heic": ".heic",
+    "image/heif": ".heif",
+}
+_SAFE_FNAME = re.compile(r"^[a-f0-9]{32}\.(jpg|png|webp|heic|heif)$")
 
 # --- Emergent managed email (Resend proxy) ---
 EMAIL_BASE_URL = "https://integrations.emergentagent.com"
@@ -210,6 +224,7 @@ class QuoteRequest(BaseModel):
     city: str = Field(default="", max_length=120)
     urgency: str = Field(default="flexible", max_length=40)
     message: str = Field(min_length=1, max_length=4000)
+    photo_url: str = Field(default="", max_length=500)
     status: str = "new"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -240,6 +255,28 @@ async def root():
     return {"message": "Property Perfect API is live"}
 
 
+@api_router.post("/uploads")
+async def upload_photo(file: UploadFile = File(...)):
+    if file.content_type not in _IMG_EXT:
+        raise HTTPException(status_code=400, detail="Please upload a JPG, PNG, WebP or HEIC image")
+    data = await file.read()
+    if len(data) == 0 or len(data) > 8 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="Photo must be between 1 byte and 8MB")
+    fname = uuid.uuid4().hex + _IMG_EXT[file.content_type]
+    (UPLOAD_DIR / fname).write_bytes(data)
+    return {"url": f"{SITE_URL}/api/uploads/{fname}"}
+
+
+@api_router.get("/uploads/{fname}")
+async def get_upload(fname: str):
+    if not _SAFE_FNAME.match(fname):
+        raise HTTPException(status_code=400, detail="Invalid file name")
+    path = UPLOAD_DIR / fname
+    if not path.is_file():
+        raise HTTPException(status_code=404, detail="Not found")
+    return FileResponse(path)
+
+
 def _quote_email_html(q: QuoteRequest) -> str:
     label = "Work order" if q.request_type == "work-order" else "Quote request"
     ref = f"PP-{q.id[-6:].upper()}"
@@ -251,7 +288,7 @@ def _quote_email_html(q: QuoteRequest) -> str:
         ("Name", q.name),
         ("Phone", q.phone),
         ("Email", q.email),
-        ("City", q.city or "Not provided"),
+        ("City / address", q.city or "Not provided"),
         ("Urgency", q.urgency),
     ]
     trs = "".join(
@@ -259,13 +296,21 @@ def _quote_email_html(q: QuoteRequest) -> str:
         f'<td style="padding:6px 0;font-size:13px;color:#0E241F;font-family:Arial,sans-serif"><strong>{escape(v)}</strong></td></tr>'
         for k, v in rows
     )
+    photo_row = ""
+    if q.photo_url:
+        photo_url = f"{SITE_URL}/api/uploads/{q.photo_url}"
+        photo_row = (
+            f'<tr><td style="padding:14px 12px 4px 0;font-size:13px;color:#48645B;font-family:Arial,sans-serif;vertical-align:top">Photo</td>'
+            f'<td style="padding:14px 0 4px;font-size:13px;font-family:Arial,sans-serif">'
+            f'<a href="{photo_url}" style="color:#1699B0;font-weight:bold">View the attached photo</a></td></tr>'
+        )
     return (
         f'<table role="presentation" width="100%" style="background:#F3EBDC;padding:24px">'
         f'<tr><td><table role="presentation" width="100%" style="max-width:560px;background:#FBF6ED;border-radius:12px">'
         f'<tr><td style="padding:24px">'
         f'<p style="margin:0 0 4px;font-size:16px;font-weight:bold;color:#0C5B47;font-family:Arial,sans-serif">{escape(EMAIL_FROM_NAME)}</p>'
         f'<p style="margin:0 0 18px;font-size:13px;color:#48645B;font-family:Arial,sans-serif">A new request just came in through the website.</p>'
-        f'<table role="presentation" width="100%" style="border-top:2px solid #C9F2DF">{trs}'
+        f'<table role="presentation" width="100%" style="border-top:2px solid #C9F2DF">{trs}{photo_row}'
         f'<tr><td style="padding:14px 12px 4px 0;font-size:13px;color:#48645B;font-family:Arial,sans-serif;vertical-align:top">Message</td>'
         f'<td style="padding:14px 0 4px;font-size:13px;color:#0E241F;font-family:Arial,sans-serif">{escape(q.message)}</td></tr>'
         f'</table>'
@@ -278,6 +323,9 @@ def _quote_email_html(q: QuoteRequest) -> str:
 async def create_quote_request(payload: QuoteRequest):
     if payload.request_type not in ("quote", "work-order"):
         payload.request_type = "quote"
+    if payload.photo_url:
+        fname = payload.photo_url.split("/")[-1]
+        payload.photo_url = fname if _SAFE_FNAME.match(fname) else ""
     doc = payload.to_mongo()
     await db.quote_requests.insert_one(doc)
     logging.info(f"Quote request saved: {payload.id} ({payload.request_type})")

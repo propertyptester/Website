@@ -40,6 +40,10 @@ Build Property Perfect, a Florida property services company serving property man
 ## Implemented (2026-09-11, round 4 — visual edits)
 - Navbar logo: house icon replaces leaf; "Property" in pine green; pink icon chips now green; hero photo swapped to a Florida house shot; rotating badge removed; manifesto descriptions enlarged
 
+## Implemented (2026-09-11, round 5)
+- Dedicated /request page from hero CTA: name/company, property address, photo upload (client-side downscaled, stored server-side, link included in owner email), problem description, urgency — emails admin@propertyperfect.net on send
+- "360" branding confirmed as app-only; site stays "Property Perfect"
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
