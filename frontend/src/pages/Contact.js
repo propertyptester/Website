@@ -49,7 +49,7 @@ export default function Contact() {
                   data-testid="contact-info-email"
                   className="group flex items-center gap-4 rounded-3xl border border-ink/5 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_-24px_rgba(5,55,44,0.3)]"
                 >
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#DCF3EE] text-lagoon">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#DCEFF7] text-lagoon">
                     <Mail className="h-5 w-5" />
                   </span>
                   <div>

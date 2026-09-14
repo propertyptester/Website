@@ -47,6 +47,9 @@ Build Property Perfect, a Florida property services company serving property man
 ## Implemented (2026-09-11, round 6 — logo theme)
 - Palette aligned to the logo: headings/bands now the logo's sea-green teal (pine #127B68, deep #0A5F52, lagoon #189887), coral accents kept, blue tints replaced with teal tints site-wide
 
+## Implemented (2026-09-14, round 7 — real logo)
+- Official logo (transparent PNG, cleaned from uploaded art) now live in navbar and footer; favicon recolored to match; palette aligned to true logo colors: blue-teal #256E80 / #1B4A5C bands, sky-blue accent #4FA8C6, logo coral #F4503A
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider

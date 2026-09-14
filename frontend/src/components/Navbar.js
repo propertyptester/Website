@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Leaf } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { EASE } from "./anim";
 
 const LINKS = [
@@ -15,15 +15,26 @@ const LINKS = [
 
 export function Logo({ light = false }) {
   return (
-    <Link to="/" data-testid="logo-link" className="group flex items-center gap-2">
-      <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-pine text-cream transition-transform duration-300 group-hover:-rotate-6">
-        <Leaf className="h-5 w-5" />
-        <span className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-coral" />
-      </span>
-      <span className="font-display text-xl font-bold leading-none">
-        <span className={light ? "text-mint" : "text-pine"}>Property</span>{" "}
-        <span className="font-script text-2xl font-semibold text-coral">Perfect</span>
-      </span>
+    <Link to="/" data-testid="logo-link" className="group inline-flex shrink-0 items-center">
+      {light ? (
+        <span className="inline-flex items-center rounded-2xl bg-cream p-2 shadow-sm transition-transform duration-300 group-hover:-rotate-1">
+          <img
+            src="/logo.png"
+            alt="Property Perfect — Build. Maintain. Renew."
+            data-testid="logo-image"
+            className="h-12 w-auto"
+            loading="eager"
+          />
+        </span>
+      ) : (
+        <img
+          src="/logo.png"
+          alt="Property Perfect — Build. Maintain. Renew."
+          data-testid="logo-image"
+          className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.03] md:h-14"
+          loading="eager"
+        />
+      )}
     </Link>
   );
 }
@@ -43,7 +54,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 bg-cream/85 backdrop-blur-md transition-shadow duration-300 ${
-        scrolled ? "shadow-[0_1px_0_rgba(14,36,31,0.08),0_12px_32px_-16px_rgba(5,55,44,0.25)]" : ""
+        scrolled ? "shadow-[0_1px_0_rgba(14,36,31,0.08),0_12px_32px_-16px_rgba(27,74,92,0.35)]" : ""
       }`}
       data-testid="navbar"
     >
@@ -71,7 +82,7 @@ export default function Navbar() {
           <Link
             to="/contact"
             data-testid="nav-cta-button"
-            className="group hidden items-center gap-2 rounded-full bg-coral px-6 py-3 text-sm font-extrabold text-white shadow-[0_10px_24px_-8px_rgba(255,107,92,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral-dark sm:inline-flex"
+            className="group hidden items-center gap-2 rounded-full bg-coral px-6 py-3 text-sm font-extrabold text-white shadow-[0_10px_24px_-8px_rgba(244,80,58,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-coral-dark sm:inline-flex"
           >
             Get a Free Quote
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
