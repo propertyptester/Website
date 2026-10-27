@@ -59,6 +59,11 @@ Build Property Perfect, a Florida property services company serving property man
 ## Implemented (2026-09-14, round 10)
 - Hero: "Build. Maintain. Renew." on its own line; "Florida Focused" trust chip replaced with "360° Maintenance" (broader-than-Florida positioning)
 
+## Implemented (2026-10-27, round 11 — hi-res logo + favicon)
+- Logo replaced with the user's new 1982px asset sheet (checkerboard removed, colors un-blended, stray pixels cleaned): `public/logo.png` (navbar, no tagline, 1000x460) and `public/logo-full.png` (footer, with tagline, 1000x500)
+- Browser-tab icon built from the actual house roof + leaf artwork on a navy #29607F rounded square: `favicon.ico` (16–64), `favicon-192.png`, `favicon-512.png`, `apple-touch-icon.png`; `og:image` → logo-full; theme-color → #29607F
+- Site palette intentionally left unchanged (user choice)
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
