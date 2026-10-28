@@ -12,6 +12,7 @@ export const COMPANY = {
   email: "admin@propertyperfect.net",
   area: "Serving all of Florida",
   hours: "Mon–Sat · 7am–6pm",
+  backOfficeUrl: "https://esteban-field-app.emergent.host",
 };
 
 export const IMG = {

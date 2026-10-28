@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, LockKeyhole } from "lucide-react";
 import { EASE } from "./anim";
+import { COMPANY } from "../data/site";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -77,6 +78,16 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
+          <a
+            href={COMPANY.backOfficeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="nav-link-back-office"
+            className="inline-flex items-center gap-1.5 rounded-full border border-pine/20 px-4 py-2 text-[13px] font-bold text-pine transition-colors hover:border-pine/50 hover:bg-mintsoft"
+          >
+            <LockKeyhole className="h-3.5 w-3.5" />
+            Back Office
+          </a>
         </nav>
         <div className="flex items-center gap-3">
           <Link
@@ -128,6 +139,16 @@ export default function Navbar() {
                   </NavLink>
                 </motion.div>
               ))}
+              <a
+                href={COMPANY.backOfficeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="nav-mobile-back-office"
+                className="mt-1 flex items-center gap-2 rounded-xl px-4 py-3 font-display text-2xl font-bold text-pine"
+              >
+                <LockKeyhole className="h-5 w-5" />
+                Back Office
+              </a>
               <Link
                 to="/contact"
                 data-testid="nav-mobile-cta"
