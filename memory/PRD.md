@@ -64,6 +64,10 @@ Build Property Perfect, a Florida property services company serving property man
 - Browser-tab icon built from the actual house roof + leaf artwork on a navy #29607F rounded square: `favicon.ico` (16–64), `favicon-192.png`, `favicon-512.png`, `apple-touch-icon.png`; `og:image` → logo-full; theme-color → #29607F
 - Site palette intentionally left unchanged (user choice)
 
+## Implemented (2026-10-27, round 12 — Back Office link)
+- "Back Office" pill link added LAST in the top navigation (desktop + mobile menu); opens the user's external work app https://esteban-field-app.emergent.host in a new tab (URL kept in `COMPANY.backOfficeUrl` in `src/data/site.js`). No login on this site. Tested via testing agent (iteration_1.json, all passed)
+- Confirmed the old "flordia" typo no longer exists anywhere in the frontend source
+
 ## Backlog
 - P1: Real business details (phone, address), reviews with real names, project photos
 - P2: Per-service detail pages (/services/:slug), zip-code service-area checker, before/after gallery slider
